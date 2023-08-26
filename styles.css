@@ -73,3 +73,24 @@ header, footer{
     font-weight: 800;
     font-size: large;
 }
+
+.remove-button{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    align-self: flex-end;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.read-status{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
