@@ -28,7 +28,7 @@ function getPageInformationDiv(book){
     return pageInformationDiv;
 }
 
-function getReadStatusDiv(book){
+function getReadStatusDiv(book, bookIndex){
     const readStatusDiv =  document.createElement('div');
     readStatusDiv.classList.add('read-status')
     const readStatusLabel = document.createElement('label');
@@ -36,7 +36,9 @@ function getReadStatusDiv(book){
     const readStatusCheckbox = document.createElement('input');
     readStatusCheckbox.type = "checkbox";
     readStatusCheckbox.checked = book.isRead;
-    
+    readStatusCheckbox.addEventListener('change', (checkbox) => {
+        myLibrary[bookIndex].isRead = checkbox.target.checked;
+    })
     readStatusDiv.appendChild(readStatusLabel);
     readStatusDiv.appendChild(readStatusCheckbox);
     return readStatusDiv;
@@ -60,7 +62,7 @@ function displayBook(bookIndex){
     const book = myLibrary[bookIndex];
     const mainInformationDiv = getMainInformationDiv(book);
     const pageInformationDiv = getPageInformationDiv(book);
-    const readStatusDiv = getReadStatusDiv(book);
+    const readStatusDiv = getReadStatusDiv(book, bookIndex);
     const removeButton = getRemoveButton(bookIndex);
     const newCardDiv = document.createElement('div');
     newCardDiv.classList.add('card');
