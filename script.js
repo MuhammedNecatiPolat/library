@@ -38,7 +38,7 @@ function getReadStatusDiv(book, bookIndex){
     readStatusCheckbox.checked = book.isRead;
     readStatusCheckbox.addEventListener('change', (checkbox) => {
         myLibrary[bookIndex].isRead = checkbox.target.checked;
-    })
+    });
     readStatusDiv.appendChild(readStatusLabel);
     readStatusDiv.appendChild(readStatusCheckbox);
     return readStatusDiv;
