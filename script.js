@@ -13,8 +13,8 @@ function handleNewBook(author, title, page, isRead){
 }
 
 function displayNewBook(book){
-    const mainInformation = book.title + "written by" + book.author;
-    const pageInformation = "Has" + book.page + "'s in it";
+    const mainInformation = book.title + " by " + book.author;
+    const pageInformation = "Has " + book.page + " pages in it";
     const isReadInformation = book.isRead ? "You have read it" : "You haven't read it";
     const newCardDiv = document.createElement('div');
     newCardDiv.classList.add('card');
